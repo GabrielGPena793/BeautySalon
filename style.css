@@ -37,7 +37,7 @@ img {
   --title-font-size: 1.875rem;
   --subtitle-font-size: 1rem;
 
-  --title-font: 'Poppins', sans-serif;
+  --title-font: 'Poppins', sans-serif; /*caso eu queira torcar as fontes depois*/
   --body-font: 'DM Sans', sans-serif;
 }
 
@@ -196,9 +196,8 @@ nav ul li a {
   position: relative;
 }
 
-nav ul li a:hover,
+nav ul li a:hover,/*houver serve pra quando eu passar o mause em cima */
 nav ul li a.active {
-  /*houver serve pra quando eu passar o mause em cima */
   color: var(--base-color);
 }
 
@@ -390,6 +389,11 @@ nav.show div.icon-close {
   border-bottom: 0.25rem solid var(--base-color);
   border-radius: 0.25rem 0.25rem 0 0;
   text-align: center;
+  transition: background 0.3s;
+}
+
+.card:hover {
+  background: var(--base-color-second);
 }
 
 .card i {
@@ -573,11 +577,150 @@ footer .social a:hover {
 
 /*============ MEDIA QUERIES =============*/
 /*  Break points - PONTOS DE QUEBRA:*/
-/* extra large devices: 1200 > */
+/* medium devices: 767 > */
+@media (min-width: 767px) {
+  .section {
+    padding: 9rem;
+  }
+
+  footer .container {
+    grid-auto-flow: column;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+}
+
+/*  ==================== large devices: 992 > ==================== */
+@media (min-width: 992px) {
+  :root {
+    --title-font-size: 2.25rem;
+    --subtitle-font-size: 1.125rem;
+  }
+
+  .section {
+    padding: 6rem;
+  }
+
+  .container {
+    max-width: 66rem;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+  }
+
+  .section header {
+    max-width: 32rem;
+    text-align: center;
+    margin: auto;
+    margin-right: auto;
+  }
+
+  .section header {
+    max-width: 32rem;
+    text-align: center;
+    margin: auto;
+    margin-right: auto;
+  }
+
+  section .section #home {
+    padding: 5rem;
+  }
+
+  header .logo {
+    margin-left: 7rem;
+  }
+
+  nav .menu {
+    opacity: 1;
+    visibility: visible;
+    top: 0;
+    transition: 0.2;
+    margin-right: 7rem;
+  }
+
+  nav .menu ul {
+    display: flex;
+    gap: 2;
+    margin-left: 15rem;
+  }
+
+  nav .menu ul li a.title {
+    font: 400 1rem var(--body-font);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  nav .menu ul li a.title.active {
+    font-weight: bold;
+    -webkit-font-smoothing: auto;
+  }
+
+  nav .icon-menu {
+    display: none;
+  }
+
+  .title {
+    font: 700 1.5rem var(--title-font);
+  }
+
+  #home .text {
+    text-align: left;
+    max-width: 20rem;
+  }
+
+  #home .container {
+    grid-auto-flow: column;
+    justify-content: space-between;
+    margin: 0 auto;
+  }
+
+  #home .image {
+    /*o order só funciona com uma caixa grid ou flex*/
+    order: 1;
+  }
+
+  #about .container {
+    margin: 0 auto;
+    grid-auto-flow: column;
+  }
+
+  #home .image img,
+  #home .image::before {
+    border-radius: 2.25rem;
+    width: 24rem;
+  }
+
+  #about .image img,
+  #about .image::before {
+    border-radius: 5.25rem;
+  }
+
+  #testimonials header {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr; /*colocar três frações iguais, caso eu queira só 2 só declaro 2 fr. caso eu queria dar mais enfase a uma é só aumentar o tamanho da fração que desejar*/
+  }
+
+  footer .container {
+    grid-auto-flow: column;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  footer .logo {
+    font-size: 1.8rem;
+  }
+}
+
+/* ================== extra large devices: 1200 =============================> */
+
 @media (min-width: 1200px) {
+  /* 1200px*/
   /* reusable classes */
   .container {
-    max-width: 1120px;
+    max-width: 70rem; /* 1120px*/
     margin-left: auto;
     margin-right: auto;
   }
@@ -648,6 +791,11 @@ footer .social a:hover {
     text-align: left;
   }
 
+  #home .image img,
+  #home .image::before {
+    width: 100%;
+  }
+
   /*about*/
   #about .container {
     margin: 0 auto;
@@ -696,12 +844,4 @@ footer .social a:hover {
   }
 }
 /* large devices: 1023 > */
-/* large devices: 992 > */
-@media (min-width: 992px) {
-  :root {
-    --title-font-size: 2.25rem;
-    --subtitle-font-size: 1.125rem;
-  }
-}
 
-/* medium devices: 767 > */
