@@ -686,7 +686,6 @@ footer .social a:hover {
   #home .image img,
   #home .image::before {
     border-radius: 2.25rem;
-    width: 24rem;
   }
 
   #about .image img,
@@ -782,7 +781,6 @@ footer .social a:hover {
   #home .image {
     /*o order só funciona com uma caixa grid ou flex*/
     order: 1;
-    margin-left: 12rem;
   }
 
   #home .text {
